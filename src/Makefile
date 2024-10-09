@@ -1,26 +1,14 @@
-CFLAGS=-g
+tokenize: tokenizer.o uimain.o
+
+	gcc -o tokenize tokenizer.o uimain.o
 
 
-
-all: tokenize
-
-
+tokenizer.o: tokenizer.h tokenizer.c
 
 uimain.o: uimain.c
 
-
-
-
-tokenize: uimain.o
-
-	cc -o $@ $^ $(CFLAGS)
+run:
+	./tokenize
 
 clean:
-
 	rm -f *.o tokenize
-
-
-
-run:tokenize
-
-	./tokenize

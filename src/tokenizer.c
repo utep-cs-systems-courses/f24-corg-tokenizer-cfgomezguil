@@ -124,5 +124,9 @@ char *token_terminator(char *token){
  }
 
 /* Frees all tokens and the vector containing themx. */
-//void free_tokens(char **tokens);
-
+void free_tokens(char **tokens){
+  for( int i = 0; tokens[i] != NULL; i++){
+    free(tokens[i]);
+  }
+  free(tokens);
+}
